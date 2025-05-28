@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroTitle = document.querySelector('.hero-text h2');
   const heroDesc = document.querySelector('.hero-text p');
   const heroBtn = document.querySelector('.hero-btn');
+  const heroYear = document.getElementById('hero-year');
+  const heroRating = document.getElementById('hero-rating');
+  const heroRuntime = document.getElementById('hero-runtime');
+  const heroGenres = document.getElementById('hero-genres');
 
   // Function to load popular movies on page load
   async function loadPopularMovies() {
@@ -28,6 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
         heroBtn.onclick = () => {
           window.location.href = `details.html?id=${featured.id}`;
         };
+
+        // Set year and rating from popular movie data
+        heroYear.textContent = featured.release_date
+          ? `Year: ${featured.release_date.substring(0, 4)} |`
+          : 'Year: N/A |';
+        heroRating.textContent = featured.vote_average
+          ? `Rating: ${featured.vote_average.toFixed(1)} |`
+          : 'Rating: N/A |';
+
+        // Fetch full details for runtime and genres
+        try {
+          const details = await getMovieDetails(featured.id);
+          if (details.runtime && !isNaN(details.runtime)) {
+            const hours = Math.floor(details.runtime / 60);
+            const minutes = details.runtime % 60;
+            heroRuntime.textContent =
+              hours > 0
+                ? `Runtime: ${hours}hr${minutes > 0 ? ` ${minutes}min |` : ''}`
+                : `Runtime: ${minutes}min |`;
+          } else {
+            heroRuntime.textContent = 'Runtime: N/A |';
+          }
+          if (details.genres && details.genres.length > 0) {
+            heroGenres.textContent =
+              'Genres: ' + details.genres.map((g) => g.name).join(', ');
+          } else {
+            heroGenres.textContent = 'Genres: N/A';
+          }
+        } catch (e) {
+          heroRuntime.textContent = 'Runtime: N/A';
+          heroGenres.textContent = 'Genres: N/A';
+        }
       }
       displayMovies(data.results, movieListingsContainer);
     } else {
