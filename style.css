@@ -1,0 +1,367 @@
+/* Global Resets and Base Styles */
+:root {
+  --dark-bg: #0f0f0f;
+  --card-bg: #1a1a1a;
+  --gold-accent: #ffd700;
+  --gold-light: #ffe55c;
+  --text-primary: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff; /* Default text color for dark themes */
+  line-height: 1.6;
+}
+
+.logo {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+.logo-accent {
+  color: #f5c518;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1em;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  background: #232323;
+  color: #f5c518;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #232323;
+  border-radius: 25px;
+  padding: 4px 16px;
+  margin-left: 30px;
+}
+.search-container .search-icon {
+  color: #aaa;
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+.search-container input[type='text'] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+  width: 180px;
+  padding: 8px 0;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(90deg, #181818 60%, #232323 100%);
+  border-radius: 18px;
+  margin: 40px 5% 30px 5%;
+  padding: 40px 0;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.25);
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.hero-poster {
+  width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+.hero-text {
+  max-width: 500px;
+  text-align: left;
+}
+.hero-text h2 {
+  color: #f5c518;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  color: #eee;
+  font-size: 1.1em;
+  margin-bottom: 18px;
+}
+.hero-btn {
+  background: #f5c518;
+  color: #181818;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 1em;
+  border: none;
+  transition: background 0.2s;
+}
+.hero-btn:hover {
+  background: #ffe082;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+body.dashboard-theme {
+  background-color: #141414;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #101010;
+  border-bottom: 1px solid #333;
+}
+
+.dashboard-header .search-container input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.dashboard-header .profile-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px;
+  padding: 0 5%;
+}
+
+.movie-card {
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  /* Aspect ratio can be controlled if needed */
+}
+
+.movie-card .movie-info {
+  padding: 15px;
+}
+
+.movie-card .movie-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.movie-card .movie-info p {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Details Screen Specific Styles */
+.details-header,
+.bookmarks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #1f2833;
+}
+
+.details-main,
+.bookmarks-main {
+  padding: 20px 5%;
+}
+
+#movie-details-content .movie-backdrop img {
+  width: 100%;
+  max-height: 500px; /* Limit backdrop height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#movie-details-content .movie-info-container {
+  display: flex;
+  gap: 30px;
+}
+
+#movie-details-content .movie-poster-container img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+#movie-details-content .movie-text-details h1 {
+  color: #f5c518;
+  margin-top: 0;
+}
+
+#movie-details-content .meta-info span,
+#movie-details-content .genre-tags span {
+  margin-right: 10px;
+  background-color: #45a29e;
+  color: #0b0c10;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+}
+
+#movie-details-content .action-buttons button {
+  background-color: #f5c518;
+  color: #0b0c10;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 12px 20px;
+}
+
+#movie-details-content .action-buttons .bookmark-icon {
+  background-color: transparent;
+  color: #f5c518;
+  font-size: 2em; /* Make heart icon larger */
+  padding: 0;
+}
+
+/* Bookmarks Screen Specific Styles */
+.bookmarks-main h1 {
+  color: #f5c518;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Trailer Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #1f2833; /* Dark modal background */
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #f5c518;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-button {
+  color: #f5c518;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#youtube-trailer-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #101010;
+  border-top: 1px solid #333;
+  font-size: 0.9em;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+/* Add specific media queries for responsiveness based on Figma designs */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+  }
+  .dashboard-header .search-container {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  #movie-details-content .movie-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #movie-details-content .movie-poster-container img {
+    width: 200px; /* Smaller poster on mobile */
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text {
+    max-width: 100%;
+  }
+  .profile-icon img {
+    margin-left: 0;
+  }
+}
