@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie App Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <div class="logo">MOVIE APP</div>
+      <nav></nav>
+      <div class="search-container">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for movies..."
+        />
+        <button id="search-button">Search</button>
+      </div>
+      <div class="profile-icon">
+        <img src="assets/images/profile_placeholder.png" alt="Profile" />
+      </div>
+    </header>
 
+    <main class="dashboard-main">
+      <section class="hero-section">
+        <h2>Featured Movie</h2>
+        <p>Details about the featured movie...</p>
+      </section>
+
+      <section id="movie-listings" class="movie-grid">
+        <p>Loading movies...</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Movie App</p>
+    </footer>
+  </body>
 </html>
