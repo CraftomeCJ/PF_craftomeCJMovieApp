@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="movie-chill-theme">
+    <header class="details-header">
+      <div class="logo">
+        <a href="index.html"><span class="logo-accent">MOVIE</span> APP</a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="bookmarks.html"
+              ><i class="fas fa-bookmark"></i> Bookmarks</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="movie-details-content" class="details-main">
+      <!-- Movie details will be dynamically populated here -->
+      <section class="movie-backdrop">
+        <img src="" alt="Movie Backdrop" id="details-backdrop" />
+      </section>
+
+      <section class="movie-info-container">
+        <div class="movie-poster-container">
+          <img src="" alt="Movie Poster" id="details-poster" />
+          <div class="action-buttons">
+            <button id="watch-trailer-button">
+              <i class="fas fa-play"></i> WATCH TRAILER
+            </button>
+            <button id="bookmark-button-details" class="bookmark-icon">
+              <i class="far fa-bookmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="movie-text-details">
+          <h1 id="details-title">Movie Title</h1>
+
+          <div class="meta-info">
+            <span id="details-year">Year</span> |
+            <span id="details-runtime">Runtime</span> |
+            <span id="details-rating">Rating</span>
+          </div>
+
+          <div class="genre-tags" id="details-genres">
+            <!-- Genre tags will be populated here -->
+          </div>
+
+          <h2>Overview</h2>
+          <p id="details-overview">Movie overview goes here...</p>
+
+          <div class="section-divider"></div>
+
+          <div class="cast-crew">
+            <h2>Cast</h2>
+            <div class="cast-grid" id="cast-list">
+              <!-- Cast members will be populated here -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="trailer-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <iframe
+          id="youtube-trailer-player"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Movie App</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/details.js"></script>
+  </body>
+</html>
