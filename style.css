@@ -291,7 +291,81 @@ body.dashboard-theme {
 .bookmarks-main h1 {
   color: #f5c518;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  display: none;
+}
+
+.empty-state i {
+  color: #f5c518;
+  margin-bottom: 20px;
+}
+
+.empty-state h2 {
+  color: #f5c518;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: #c5c6c7;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.cta-button {
+  background: #f5c518;
+  color: #0b0c10;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* When no bookmarks exist */
+.no-bookmarks #bookmarked-movies {
+  display: none;
+}
+
+.no-bookmarks .empty-state {
+  display: block;
+}
+
+/* Bookmark card specific styles */
+.bookmarked-card {
+  position: relative;
+}
+
+.bookmarked-card .remove-bookmark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f5c518;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bookmarked-card:hover .remove-bookmark {
+  opacity: 1;
 }
 
 /* Trailer Modal Styles */
@@ -380,5 +454,15 @@ footer {
   .hero-text {
     max-width: 100%;
     padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookmarks-main h1 {
+    font-size: 1.8em;
+  }
+
+  .empty-state {
+    padding: 30px 10px;
   }
 }

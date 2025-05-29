@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookmarks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="movie-chill-theme">
+    <header class="bookmarks-header">
+      <div class="logo">
+        <a href="index.html"><span class="logo-accent">MOVIE</span> APP</a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="bookmarks.html" class="active"
+              ><i class="fas fa-bookmark"></i> Bookmarks</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="bookmarked-movies-content" class="bookmarks-main">
+      <h1><i class="fas fa-bookmark"></i> My Bookmarked Movies</h1>
+
+      <div id="bookmarks-message" class="empty-state">
+        <i class="fas fa-bookmark fa-3x"></i>
+        <h2>No Bookmarks Yet</h2>
+        <p>Save your favorite movies by clicking the bookmark icon</p>
+        <a href="index.html" class="cta-button">Browse Movies</a>
+      </div>
+
+      <div class="search-container">
+        <span class="search-icon"><i class="fa fa-search"></i></span>
+        <input
+          type="text"
+          id="bookmark-search-input"
+          placeholder="Search bookmarked movies..."
+        />
+      </div>
+
+      <div class="filter-container">
+        <label for="genre-filter">Filter by Genre:</label>
+        <select id="genre-filter">
+          <option value="">All Genres</option>
+          <!-- Genre options will be dynamically populated here -->
+        </select>
+      </div>
+
+      <section id="bookmarked-movie-listings" class="movie-grid">
+        <!-- Bookmarked movie cards will be dynamically inserted here by JavaScript -->
+        <!-- Example of an empty state -->
+        <p id="no-bookmarks-message" style="display: none">
+          You haven't bookmarked any movies yet.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Movie App</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/bookmarks.js"></script>
+  </body>
+</html>
