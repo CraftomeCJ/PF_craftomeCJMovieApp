@@ -8,7 +8,7 @@ This is a responsive movie web application that allows users to browse popular m
 
 **Figma Design Link:** [https://www.figma.com/design/crV63Pog9pFPubaG9EE8NR/New-Movie---Header-Website--Community-?node-id=113-120&t=KQdYNyk1u29COwJr-0](https://www.figma.com/design/crV63Pog9pFPubaG9EE8NR/New-Movie---Header-Website--Community-?node-id=113-120&t=KQdYNyk1u29COwJr-0)
 
-** My Website URL: ** [https://craftomecj.github.io/PF_craftomeCJMovieApp/]
+**My Website URL:** [https://craftomecj.github.io/PF_craftomeCJMovieApp/]
 
 ## Features
 
